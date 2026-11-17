@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizon Properties Desk</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Conversations">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">H</div>
+        <div class="brand-text">
+          <strong>Horizon</strong>
+          <span>Property Desk</span>
+        </div>
+      </div>
+      <button class="primary-btn" id="newChat" type="button">New conversation</button>
+      <div class="section-label">Conversations</div>
+      <ul class="conversation-list" id="conversationList"></ul>
+    </aside>
+
+    <main class="chat" aria-label="Chat">
+      <header class="chat-header">
+        <button class="icon-btn mobile-only" id="menuBtn" type="button" aria-label="Open conversations">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="chat-title">
+          <h1 id="chatTitle">New conversation</h1>
+          <span id="chatSubtitle">Property consultant desk</span>
+        </div>
+        <button class="ghost-btn compact-only" id="infoBtn" type="button">Lead details</button>
+      </header>
+
+      <div class="messages" id="messages" aria-live="polite"></div>
+
+      <div class="chips" id="chips"></div>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <textarea id="input" rows="1" maxlength="1000" placeholder="Type a message" dir="auto" aria-label="Message"></textarea>
+        <button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+    </main>
+
+    <aside class="insights" id="insights" aria-label="Lead details">
+      <section class="card">
+        <div class="card-head">
+          <h2>Lead profile</h2>
+          <span class="pill" id="profileCount">0 of 4</span>
+        </div>
+        <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+        <dl class="facts" id="facts"></dl>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Meeting</h2>
+          <span class="pill" id="meetingPill">Not scheduled</span>
+        </div>
+        <p class="meeting-text" id="meetingText">A call is arranged once the lead is qualified.</p>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Owner calendar</h2>
+          <span class="pill" id="bookingCount">0</span>
+        </div>
+        <ul class="bookings" id="bookings"></ul>
+      </section>
+    </aside>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
